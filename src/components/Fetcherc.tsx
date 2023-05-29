@@ -1,6 +1,7 @@
 "use client"
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { Component, ReactNode } from "react";
+import BASE_URL from '@/BaseUrl';
 
 
 
@@ -13,7 +14,7 @@ export default class Fetcherc extends Component<{ data: Array<any> }>{
     };
 
     fetchBlogDataGragually = async (start: number, end: number) => {
-        let res = await fetch(`http://localhost:3000/api/blogs?start=${start}&end=${end}`);
+        let res = await fetch(`${BASE_URL}/api/blogs?start=${start}&end=${end}`);
         let dataExtracted = await res.json();
 
         if (dataExtracted.sortedData === "Not found") {
