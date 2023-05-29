@@ -32,7 +32,7 @@ export default class Fetcherc extends Component<{ data: Array<any> }>{
             this.start = this.start + 10;
             this.end = this.end + 10;
         } else {
-            this.state.hasMore = false;
+            this.setState({ hasMore: false });
         }
 
     }
