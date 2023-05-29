@@ -50,8 +50,8 @@ export default class Fetcherc extends Component<{ data: Array<any> }>{
                 }
                 loader={<h4>Loading...</h4>}
             >
-                {this.state.items.map((item: { name: string }) => (
-                    <div className='text-center my-5 text-white h-80 bg-gray-900 border-4 border-yellow-300'>{item.name}</div>
+                {this.state.items.map((item: { name: string },index:number) => (
+                    <div key={index} className='text-center my-5 text-white h-80 bg-gray-900 border-4 border-yellow-300'>{item.name}</div>
                 ))}
             </InfiniteScroll>
         )
